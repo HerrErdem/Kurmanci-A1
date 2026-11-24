@@ -1,0 +1,240 @@
+/* Kurmancî A1 · gemeinsames Design für alle Seiten
+   Farben hier ändern = alle Aufgaben ändern sich mit. */
+:root {
+  --navy: #17365d;
+  --blau: #2563eb;
+  --text: #243247;
+  --grund: #f5f5f5;
+  --linie: #dddddd;
+  --hell: #f8fafc;
+  --info: #e8f0fa;
+  --gelb: #fff8e6;
+  --orange: #d97706;
+  --gruen: #eaf6ef;
+  --gruen-stark: #16a34a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: var(--text);
+  font: 15px/1.65 Arial, Helvetica, sans-serif;
+}
+
+.seite {
+  background: var(--grund);
+  padding: 24px;
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  max-width: 1100px;
+  margin: 20px auto;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.nav a, .nav span {
+  display: inline-block;
+  padding: 9px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+.nav a { background: #ffffff; color: var(--navy); border: 1px solid #9db4cc; }
+.nav a:hover, .nav a:focus-visible { background: var(--info); }
+.nav span { color: #8a97a8; border: 1px dashed #c3ccd8; }
+.nav-unten { margin: 20px 0 0; }
+
+/* Titel */
+.titel {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.titel .ueber {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: #dceafe;
+  margin-bottom: 8px;
+}
+.titel h1, .titel h2 { font-size: 30px; line-height: 1.25; color: #ffffff; margin: 0 0 12px; }
+.titel p { font-size: 16px; color: #edf3fc; margin: 0; }
+
+/* Kästen */
+.kasten {
+  background: #ffffff;
+  border: 1px solid var(--linie);
+  border-left: 6px solid var(--blau);
+  border-radius: 10px;
+  padding: 22px;
+  margin-bottom: 20px;
+}
+.kasten h3 { color: var(--navy); font-size: 20px; margin: 0 0 10px; }
+.kasten > p:last-child { margin-bottom: 0; }
+
+.hinweis {
+  background: var(--gelb);
+  border-left: 6px solid var(--orange);
+  border-radius: 10px;
+  padding: 17px 20px;
+  margin-bottom: 20px;
+}
+.hinweis h3 { color: var(--text); font-size: 18px; margin: 0 0 8px; }
+.hinweis ul { margin: 0; padding-left: 22px; }
+.hinweis p { margin: 7px 0 0; }
+
+.merksatz {
+  background: var(--gruen);
+  border-left: 6px solid var(--gruen-stark);
+  border-radius: 10px;
+  padding: 17px 20px;
+}
+.merksatz h3 { color: var(--text); font-size: 18px; margin: 0 0 8px; }
+.merksatz p { margin: 0; }
+
+.regel { background: var(--info); border-radius: 8px; padding: 15px 18px; margin: 14px 0; }
+.regel strong { color: var(--navy); }
+.regel p { margin: 6px 0 0; }
+
+.balken {
+  background: var(--navy);
+  color: #ffffff;
+  padding: 18px 22px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.balken h2 { margin: 0; font-size: 23px; color: #ffffff; }
+.balken p { margin: 5px 0 0; color: #edf3fc; }
+
+/* Kurdischer Lesetext */
+.lesetext {
+  background: var(--hell);
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 17px;
+  line-height: 1.9;
+}
+.lesetext p { margin: 0 0 12px; }
+.lesetext p:last-child { margin: 0; }
+
+/* Tabellen */
+.tabelle-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+.alphabet { min-width: 560px; }
+.alphabet th { text-align: left; padding: 12px; background: var(--navy); color: #ffffff; }
+.alphabet td { padding: 11px; }
+tbody tr:nth-child(odd) { background: var(--hell); }
+tbody tr:nth-child(even) { background: #ffffff; }
+
+/* Aufgaben */
+.aufgaben { padding-left: 22px; margin-bottom: 0; }
+.aufgaben > li { margin-bottom: 22px; }
+.aufgaben > li:last-child { margin-bottom: 0; }
+
+input[type="text"] {
+  width: 100%;
+  max-width: 480px;
+  padding: 9px 10px;
+  border: 1px solid #9db4cc;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: inherit;
+  margin-top: 6px;
+  display: block;
+}
+input[type="text"]:focus { outline: 3px solid #bcd3f5; border-color: var(--blau); }
+
+.laut-tabelle { min-width: 340px; max-width: 520px; margin-top: 8px; }
+.laut-tabelle td { padding: 8px 11px; }
+.laut-tabelle td:first-child { width: 110px; }
+.laut-tabelle input { margin-top: 0; }
+
+/* Sonderzeichen */
+.zeichen { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.zeichen button {
+  min-width: 44px;
+  min-height: 44px;
+  font-size: 20px;
+  font-family: inherit;
+  background: #ffffff;
+  color: var(--navy);
+  border: 1px solid #c9a35c;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.zeichen button:hover, .zeichen button:focus-visible { background: #fdecc8; }
+
+/* Lösungen */
+.loesung-btn {
+  margin-top: 10px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: bold;
+  color: var(--gruen-stark);
+  background: #ffffff;
+  border: 1px solid var(--gruen-stark);
+  border-radius: 8px;
+  cursor: pointer;
+}
+.loesung-btn:hover, .loesung-btn:focus-visible { background: var(--gruen); }
+.loesung {
+  margin-top: 10px;
+  max-width: 600px;
+  background: var(--gruen);
+  border-left: 4px solid var(--gruen-stark);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.loesung p { margin: 0 0 6px; }
+.loesung p:last-child { margin: 0; }
+.loesung ul { margin: 0; padding-left: 20px; }
+
+.leeren {
+  margin-top: 18px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #6b7686;
+  background: transparent;
+  border: 1px solid #c3ccd8;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Startseite */
+.kapitel-liste { list-style: none; margin: 0; padding: 0; }
+.kapitel-liste li { margin: 0 0 10px; }
+.kapitel-liste a, .kapitel-liste .bald {
+  display: flex;
+  gap: 14px;
+  align-items: baseline;
+  padding: 14px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.kapitel-liste a { background: var(--hell); border: 1px solid #d6e0ec; color: var(--text); }
+.kapitel-liste a:hover, .kapitel-liste a:focus-visible { background: var(--info); border-color: #9db4cc; }
+.kapitel-liste .kurz { font-weight: bold; color: var(--navy); min-width: 32px; }
+.kapitel-liste .bald { color: #8a97a8; border: 1px dashed #c3ccd8; }
+
+@media (max-width: 600px) {
+  .seite { padding: 14px; margin: 0; border-radius: 0; border: 0; }
+  .titel { padding: 20px; }
+  .titel h1, .titel h2 { font-size: 24px; }
+  .kasten { padding: 16px; }
+}
